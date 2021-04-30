@@ -5,17 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "tsc",
-    "start": "tsc -w"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "server": "lite-server --baseDir=app",
+    "start": "concurrently \"npm run watch\" \"npm run server\""
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "typescript": "^2.3.2"
-  },
   "devDependencies": {
     "@types/jquery": "^3.5.5",
     "@types/lodash": "^4.14.168",
-    "@types/underscore": "^1.11.2"
+    "@types/underscore": "^1.11.2",
+    "concurrently": "^3.4.0",
+    "lite-server": "^2.3.0",
+    "typescript": "^4.2.2"
   }
 }

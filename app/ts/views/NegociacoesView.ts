@@ -1,13 +1,12 @@
-class NegociacoesView extends View<Negociacoes>{
+import { View } from './View';
+import { Negociacoes } from '../models/Negociacoes';
 
-    update(model: Negociacoes): void {
-
-        this._elemento.innerHTML = this.template(model);
-    }
+export class NegociacoesView extends View<Negociacoes> {
 
     template(model: Negociacoes): string {
-        return
-        `<table class="table table-hover table-bordered">
+
+        return `
+        <table class="table table-hover table-bordered">
             <thead>
                 <tr>
                     <th>DATA</th>
@@ -19,17 +18,20 @@ class NegociacoesView extends View<Negociacoes>{
 
             <tbody>
                 ${model.paraArray().map(negociacao => 
-                    `<tr>
-                        <td>${negociacao.data.getDate()} / ${negociacao.data.getMonth() + 1} / ${negociacao.data.getFullYear()}</td>
-                        <td>${negociacao.quantidade}</td>
-                        <td>${negociacao.valor}</td>
-                        <td>${negociacao.volume}</td>
-                     </tr>`
-                ).join('')}
+                    `
+                        <tr>
+                            <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() +1}/${negociacao.data.getFullYear()}</td>
+                            <td>${negociacao.quantidade}</td>
+                            <td>${negociacao.valor}</td>
+                            <td>${negociacao.volume}</td>
+                        <tr>
+                    `   
+                ).join('')}            
             </tbody>
 
             <tfoot>
             </tfoot>
-        </table>`;
+        </table> 
+        `;
     }
 }
