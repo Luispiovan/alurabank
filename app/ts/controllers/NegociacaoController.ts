@@ -3,6 +3,7 @@ import { Negociacao, NegociacaoParcial, Negociacoes } from '../models/index';
 import { domInject, throttle } from '../helpers/decorators/index';
 import { HandlerFunction, NegociacaoService } from '../service/index';
 import { error } from 'jquery';
+import { imprime } from '../helpers/index';
 
 export class NegociacaoController {
 
@@ -40,7 +41,7 @@ export class NegociacaoController {
         );
 
         this._negociacoes.adiciona(negociacao);
-
+        imprime(negociacao, this._negociacoes);
         this._negociacoesView.update(this._negociacoes);
         this._mensagemView.update('Negociação adicionada com sucesso!');
 
@@ -58,7 +59,6 @@ export class NegociacaoController {
             }
         }
         
-
         this._negociacaoService.obterNegociacoes(isOK)
         .then(negociacao => {
             negociacao.forEach(negociacao => this._negociacoes.adiciona(negociacao));
