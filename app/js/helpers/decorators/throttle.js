@@ -4,7 +4,7 @@ exports.throttle = void 0;
 function throttle(milisegundos = 500) {
     return function (target, propertyKey, descriptor) {
         const metodoOriginal = descriptor.value;
-        let timer = 0;
+        let timer;
         descriptor.value = function (...args) {
             if (event)
                 event.preventDefault();
