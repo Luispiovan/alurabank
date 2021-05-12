@@ -1,25 +1,15 @@
-System.register(["../models/index"], function (exports_1, context_1) {
-    "use strict";
-    var index_1, NegociacaoService;
-    var __moduleName = context_1 && context_1.id;
-    return {
-        setters: [
-            function (index_1_1) {
-                index_1 = index_1_1;
-            }
-        ],
-        execute: function () {
-            NegociacaoService = class NegociacaoService {
-                obterNegociacoes(handler) {
-                    fetch('http://localhost:8080/dados')
-                        .then(res => handler(res))
-                        .then(res => res.json())
-                        .then((dados) => dados.map(dado => new index_1.Negociacao(new Date(), dado.vezes, dado.montante)))
-                        .catch(err => console.log(err.message));
-                    return;
-                }
-            };
-            exports_1("NegociacaoService", NegociacaoService);
-        }
-    };
-});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NegociacaoService = void 0;
+const index_1 = require("../models/index");
+class NegociacaoService {
+    obterNegociacoes(handler) {
+        fetch('http://localhost:8080/dados')
+            .then(res => handler(res))
+            .then(res => res.json())
+            .then((dados) => dados.map(dado => new index_1.Negociacao(new Date(), dado.vezes, dado.montante)))
+            .catch(err => console.log(err.message));
+        return;
+    }
+}
+exports.NegociacaoService = NegociacaoService;

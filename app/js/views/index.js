@@ -1,26 +1,15 @@
-System.register(["./View", "./MensagemView", "./NegociacoesView"], function (exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
-    function exportStar_1(m) {
-        var exports = {};
-        for (var n in m) {
-            if (n !== "default") exports[n] = m[n];
-        }
-        exports_1(exports);
-    }
-    return {
-        setters: [
-            function (View_1_1) {
-                exportStar_1(View_1_1);
-            },
-            function (MensagemView_1_1) {
-                exportStar_1(MensagemView_1_1);
-            },
-            function (NegociacoesView_1_1) {
-                exportStar_1(NegociacoesView_1_1);
-            }
-        ],
-        execute: function () {
-        }
-    };
-});
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./View"), exports);
+__exportStar(require("./MensagemView"), exports);
+__exportStar(require("./NegociacoesView"), exports);

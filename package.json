@@ -15,6 +15,7 @@
   "devDependencies": {
     "@types/jquery": "^3.5.5",
     "@types/lodash": "^4.14.168",
+    "@types/node": "^15.0.2",
     "@types/underscore": "^1.11.2",
     "concurrently": "^3.4.0",
     "lite-server": "^2.3.0",
